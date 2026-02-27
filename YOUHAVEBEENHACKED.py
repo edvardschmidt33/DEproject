@@ -1,6 +1,0 @@
-print('YOU HAVE BEEN HACKED')
-print("lol")
-print("HAHAHAHAHAH")
-print("HAHAHAHAHAH")
-print("HAHAHAHAHAH")
-print("HAHAHAHAHAH")
