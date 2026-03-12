@@ -1,27 +1,33 @@
-# src/analysis_job.py
-
 from pyspark.sql import functions as F
-from config import create_spark, PARQUET_INPUT, OUTPUT_BASE, COL_YEAR, COL_TEMPO
+from config import PARQUET_PATH, OUTPUT_PATH, WORDS, YEAR_COL, create_spark
 
 
 def main():
+    spark = create_spark("reddit-analysis")
 
-    spark = create_spark("analysis")
+    df = spark.read.parquet(PARQUET_PATH)
 
-    df = spark.read.parquet(PARQUET_INPUT)
+    df_words = (
+        df
+        .withColumn("text_lower", F.lower(F.col("text")))
+        .withColumn(
+            "word",
+            F.explode(
+                F.split(F.col("text_lower"), r"[^a-zA-Z0-9]+")
+            )
+        )
+        .filter(F.col("word") != "")
+    )
 
     result = (
-        df.groupBy(COL_YEAR)
-          .agg(
-              F.count("*").alias("n_songs"),
-              F.avg(COL_TEMPO).alias("avg_tempo")
-          )
-          .orderBy(COL_YEAR)
+        df_words
+        .filter(F.col("word").isin(WORDS))
+        .groupBy(YEAR_COL, "word")
+        .count()
+        .orderBy(YEAR_COL, "word")
     )
 
-    result.write.mode("overwrite").option("header", True).csv(
-        f"{OUTPUT_BASE}/tempo_by_year"
-    )
+    result.write.mode("overwrite").option("header", True).csv(OUTPUT_PATH)
 
     spark.stop()
 

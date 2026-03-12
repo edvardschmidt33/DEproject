@@ -1,48 +1,31 @@
-# src/etl_job.py
-
-import glob
-import pandas as pd
-import h5py
-import os
-
-INPUT_DIR = "data/hdf5"
-OUTPUT_FILE = "data/parquet/msd.parquet"
-
-
-def extract_data(file_path):
-
-    with h5py.File(file_path, "r") as f:
-        tempo = f["analysis"]["songs"]["tempo"][0]
-        year = f["musicbrainz"]["songs"]["year"][0]
-
-    return {"year": int(year), "tempo": float(tempo)}
+from pyspark.sql import functions as F
+from config import RAW_JSON_PATH, PARQUET_PATH, TEXT_COL, TIME_COL, YEAR_COL, create_spark
 
 
 def main():
+    spark = create_spark("reddit-etl")
 
-    files = glob.glob(f"{INPUT_DIR}/**/*.h5", recursive=True)
+    df = spark.read.json(RAW_JSON_PATH)
 
-    rows = []
+    df_clean = (
+        df
+        .select(
+            F.col(TEXT_COL).alias("text"),
+            F.col(TIME_COL).alias("timestamp")
+        )
+        .filter(F.col("text").isNotNull())
+        .filter(F.col("timestamp").isNotNull())
+        .filter(F.length(F.trim(F.col("text"))) > 0)
+        .withColumn(
+            YEAR_COL,
+            F.year(F.from_unixtime(F.col("timestamp")))
+        )
+        .select(YEAR_COL, "text")
+    )
 
-    for file in files:
-        try:
-            row = extract_data(file)
+    df_clean.write.mode("overwrite").parquet(PARQUET_PATH)
 
-            # ignore songs without year
-            if row["year"] > 0:
-                rows.append(row)
-
-        except Exception:
-            continue
-
-    df = pd.DataFrame(rows)
-
-    os.makedirs("data/parquet", exist_ok=True)
-
-    df.to_parquet(OUTPUT_FILE, index=False)
-
-    print("Parquet dataset written:", OUTPUT_FILE)
-    print("Rows:", len(df))
+    spark.stop()
 
 
 if __name__ == "__main__":

@@ -1,64 +1,35 @@
-# src/config.py
-
-import os
 from pyspark.sql import SparkSession
 
+# =========================
+#   PATHS
+# =========================
 
-# -----------------------
-# Project identification
-# -----------------------
+RAW_JSON_PATH = "/data/reddit/corpus-webis-tldr-17.json"
+PARQUET_PATH = "/data/reddit/parquet/reddit_cleaned"
+OUTPUT_PATH = "/data/reddit/output/wordcount_by_year"
 
-PROJECT_TAG = "group42"
+# =========================
+#   COLUMN NAMES
+# =========================
 
+TEXT_COL = "body"
+TIME_COL = "created_utc"
+YEAR_COL = "year"
 
-# -----------------------
-# Spark cluster settings
-# -----------------------
+# =========================
+#   WORDS TO ANALYZE
+# =========================
 
-SPARK_MASTER_URL = os.getenv(
-    "SPARK_MASTER_URL",
-    "spark://<SPARK_MASTERNODE_IP>:7077"
-)
+WORDS = ["trump", "game", "movie", "love", "news"]
 
+# =========================
+#   SPARK SESSION
+# =========================
 
-# -----------------------
-# Dataset paths
-# -----------------------
-
-PARQUET_INPUT = os.getenv(
-    "MSD_PARQUET_INPUT",
-    "data/parquet/msd.parquet"
-)
-
-OUTPUT_BASE = os.getenv(
-    "MSD_OUTPUT_BASE",
-    "data/results"
-)
-
-
-# -----------------------
-# Dataset column names
-# -----------------------
-
-COL_YEAR = "year"
-COL_TEMPO = "tempo"
-
-
-# -----------------------
-# Spark session creator
-# -----------------------
-
-def create_spark(app_name_suffix: str):
-
-    spark = (
+def create_spark(app_name: str) -> SparkSession:
+    return (
         SparkSession.builder
-        .master(SPARK_MASTER_URL)
-        .appName(f"{PROJECT_TAG}-{app_name_suffix}")
-        .config("spark.dynamicAllocation.enabled", "true")
-        .config("spark.shuffle.service.enabled", "false")
-        .config("spark.dynamicAllocation.shuffleTracking.enabled", "true")
-        .config("spark.cores.max", "4")
+        .appName(app_name)
+        .config("spark.sql.shuffle.partitions", "12")
         .getOrCreate()
     )
-
-    return spark
