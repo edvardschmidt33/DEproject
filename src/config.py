@@ -20,7 +20,7 @@ YEAR_COL = "year"
 #   WORDS TO ANALYZE
 # =========================
 
-WORDS = ["trump", "game", "movie", "love", "news"]
+WORDS = ["WORD1", "WORD2", "WORD3", "WORD4", "WORD5"]
 
 # =========================
 #   SPARK SESSION
