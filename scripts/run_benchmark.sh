@@ -37,7 +37,7 @@ FRAC_9GB=0.5
 FRAC_18GB=0.98 #3X
 
 OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
-NUM_RUNS=3  # number of times to repeat each config
+NUM_RUNS=1  # number of times to repeat each config
 
 # -- Output setup --
 
@@ -167,27 +167,27 @@ mkdir -p "${RESULTS_DIR}/spark_logs"
 log ""
 log "=== Horizontal strong scaling ==="
 run_config "horizontal_strong" "A" 1 "$FRAC_9GB" 2 "2g"
-run_config "horizontal_strong" "B" 2 "$FRAC_9GB" 2 "2g"
-run_config "horizontal_strong" "C" 3 "$FRAC_9GB" 2 "2g"
+# run_config "horizontal_strong" "B" 2 "$FRAC_9GB" 2 "2g"
+# run_config "horizontal_strong" "C" 3 "$FRAC_9GB" 2 "2g"
 
-# 2) Horizontal weak. 6GB/worker, scale data with workers
-log ""
-log "=== Horizontal weak scaling ==="
-run_config "horizontal_weak" "A" 1 "$FRAC_6GB" 2 "2g"
-run_config "horizontal_weak" "B" 2 "$FRAC_12GB" 2 "2g"
-run_config "horizontal_weak" "C" 3 "$FRAC_18GB" 2 "2g"
+# # 2) Horizontal weak. 6GB/worker, scale data with workers
+# log ""
+# log "=== Horizontal weak scaling ==="
+# run_config "horizontal_weak" "A" 1 "$FRAC_6GB" 2 "2g"
+# run_config "horizontal_weak" "B" 2 "$FRAC_12GB" 2 "2g"
+# run_config "horizontal_weak" "C" 3 "$FRAC_18GB" 2 "2g"
 
-# 3) Vertical strong. fixed 9GB + 3 workers, increase cores
-log ""
-log "=== Vertical strong scaling ==="
-run_config "vertical_strong" "A" 3 "$FRAC_9GB" 1 "2g"
-run_config "vertical_strong" "B" 3 "$FRAC_9GB" 2 "2g"
+# # 3) Vertical strong. fixed 9GB + 3 workers, increase cores
+# log ""
+# log "=== Vertical strong scaling ==="
+# run_config "vertical_strong" "A" 3 "$FRAC_9GB" 1 "2g"
+# run_config "vertical_strong" "B" 3 "$FRAC_9GB" 2 "2g"
 
-# 4) Vertical weak. 1 worker, scale cores and data together
-log ""
-log "=== Vertical weak scaling ==="
-run_config "vertical_weak" "A" 1 "$FRAC_6GB" 1 "2g"
-run_config "vertical_weak" "B" 1 "$FRAC_12GB" 2 "2g"
+# # 4) Vertical weak. 1 worker, scale cores and data together
+# log ""
+# log "=== Vertical weak scaling ==="
+# run_config "vertical_weak" "A" 1 "$FRAC_6GB" 1 "2g"
+# run_config "vertical_weak" "B" 1 "$FRAC_12GB" 2 "2g"
 
 # -- Done --
 
