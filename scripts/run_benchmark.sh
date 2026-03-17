@@ -18,8 +18,8 @@
 
 # -- Config --
 
-SPARK_HOME="/path/to/spark"
-SPARK_MASTER="spark://MASTER_HOSTNAME:7077"
+SPARK_HOME="/home/ubuntu/spark"
+SPARK_MASTER="spark://group42-master:7077"
 SPARK_SUBMIT="${SPARK_HOME}/bin/spark-submit"
 PYSPARK_JOB="src/analysis_job.py"
 
