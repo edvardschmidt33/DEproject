@@ -1,11 +1,17 @@
 from pyspark.sql import functions as F
 from config import PARQUET_PATH, OUTPUT_PATH, WORDS, YEAR_COL, create_spark
+import argparse
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default=PARQUET_PATH)
+    parser.add_argument("--output", default=OUTPUT_PATH)
+    args = parser.parse_args()
+
     spark = create_spark("reddit-analysis")
 
-    df = spark.read.parquet(PARQUET_PATH)
+    df = spark.read.parquet(args.input)
 
     df_words = (
         df
@@ -27,7 +33,8 @@ def main():
         .orderBy(YEAR_COL, "word")
     )
 
-    result.write.mode("overwrite").option("header", True).csv(OUTPUT_PATH)
+    result.write.mode("overwrite").option("header", True).csv(args.output)
+
 
     spark.stop()
 
