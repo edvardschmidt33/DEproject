@@ -27,7 +27,7 @@ FRAC_12GB=0.667 #2X
 FRAC_9GB=0.5 
 FRAC_18GB=0.98 #3X
 
-OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
+OUTPUT_BASE="hdfs://group42-master:9000/user/ubuntu/benchmark_output"
 NUM_RUNS=1  # number of times to repeat each config
 
 # -- Output setup --
