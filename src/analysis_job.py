@@ -21,6 +21,7 @@ def main():
     df_words = (
         df
         .withColumn("text_lower", F.lower(F.col("body")))
+        .withColumn(YEAR_COL, F.year(F.from_unixtime(F.col("created_utc"))))
         .withColumn(
             "word",
             F.explode(
