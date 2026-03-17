@@ -10,7 +10,7 @@ from pyspark.sql import SparkSession
 
 RAW_JSON_PATH = "hdfs://group42-master:9000/data/reddit/corpus-webis-tldr-17.json"
 PARQUET_PATH  = "hdfs://group42-master:9000/data/reddit/parquet/reddit_cleaned"
-OUTPUT_PATH   = "hdfs://group42-master:9000/data/reddit/output/wordcount_by_year"
+OUTPUT_PATH   = "hdfs://group42-master:9000/data/reddit/output/words_by_subreddit"
 
 # =========================
 #   COLUMN NAMES
@@ -18,7 +18,8 @@ OUTPUT_PATH   = "hdfs://group42-master:9000/data/reddit/output/wordcount_by_year
 
 TEXT_COL = "body"
 TIME_COL = "created_utc"
-YEAR_COL = "year"
+#YEAR_COL = "year"
+SUBREDDIT_COL = "subreddit"
 
 # =========================
 #   WORDS TO ANALYZE
