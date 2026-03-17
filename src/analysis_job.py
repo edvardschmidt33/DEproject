@@ -1,11 +1,11 @@
 from pyspark.sql import functions as F
-from config import PARQUET_PATH, OUTPUT_PATH, WORDS, YEAR_COL, create_spark
+from config import RAW_JSON_PATH, OUTPUT_PATH, WORDS, YEAR_COL, create_spark
 import argparse
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default=PARQUET_PATH)
+    parser.add_argument("--input", default=RAW_JSON_PATH)
     parser.add_argument("--output", default=OUTPUT_PATH)
     parser.add_argument("--fraction", type=float, default=1.0)
 
@@ -13,13 +13,14 @@ def main():
 
     spark = create_spark("reddit-analysis")
 
-    df = spark.read.parquet(args.input)
+    df = spark.read.json(args.input)
+
     if args.fraction < 1.0:
         df = df.sample(fraction=args.fraction, seed=42)
-        
+
     df_words = (
         df
-        .withColumn("text_lower", F.lower(F.col("text")))
+        .withColumn("text_lower", F.lower(F.col("body")))
         .withColumn(
             "word",
             F.explode(

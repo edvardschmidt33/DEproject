@@ -27,11 +27,10 @@ PYSPARK_JOB="src/analysis_job.py"
 ALL_WORKERS=("group42-worker1" "group42-worker2" "group42-worker3")
 NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 
-# Full parquet path — we use --fraction to control how much data gets processed
-PARQUET_PATH="hdfs:///data/reddit/parquet/reddit_cleaned"
+# Full data path — we use --fraction to control how much data gets processed
+DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json/reddit_cleaned"
 
-# Fractions of the full dataset (adjust if your parquet size differs from ~10GB)
-FRAC_2GB=0.2
+# Fractions of the full dataset at around 18.9 GB
 FRAC_4GB=0.4
 FRAC_5GB=0.5
 FRAC_6GB=0.6
