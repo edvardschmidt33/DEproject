@@ -7,12 +7,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", default=PARQUET_PATH)
     parser.add_argument("--output", default=OUTPUT_PATH)
+    parser.add_argument("--fraction", type=float, default=1.0)
+
     args = parser.parse_args()
 
     spark = create_spark("reddit-analysis")
 
     df = spark.read.parquet(args.input)
-
+    if args.fraction < 1.0:
+        df = df.sample(fraction=args.fraction, seed=42)
+        
     df_words = (
         df
         .withColumn("text_lower", F.lower(F.col("text")))

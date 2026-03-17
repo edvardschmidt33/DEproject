@@ -27,11 +27,14 @@ PYSPARK_JOB="src/analysis_job.py"
 ALL_WORKERS=("group42-worker1" "group42-worker2" "group42-worker3")
 NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 
-# HDFS data subsets — split reddit data and put here before running
-DATA_2GB="hdfs:///user/ubuntu/reddit/2gb"
-DATA_4GB="hdfs:///user/ubuntu/reddit/4gb"
-DATA_5GB="hdfs:///user/ubuntu/reddit/5gb"
-DATA_6GB="hdfs:///user/ubuntu/reddit/6gb"
+# Full parquet path — we use --fraction to control how much data gets processed
+PARQUET_PATH="hdfs:///data/reddit/parquet/reddit_cleaned"
+
+# Fractions of the full dataset (adjust if your parquet size differs from ~10GB)
+FRAC_2GB=0.2
+FRAC_4GB=0.4
+FRAC_5GB=0.5
+FRAC_6GB=0.6
 
 OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
 NUM_RUNS=3  # number of times to repeat each config
@@ -104,8 +107,9 @@ run_spark_job() {
         --conf spark.eventLog.enabled=true \
         --conf spark.eventLog.dir="${RESULTS_DIR}/spark_logs" \
         "$PYSPARK_JOB" \
-        --input "$data_path" \
+        --input "$PARQUET_PATH" \
         --output "$output_path" \
+        --fraction "$data_path" \
         >> "$run_log" 2>&1
 
     local exit_code=$?
@@ -122,11 +126,11 @@ run_spark_job() {
     # figure out size label from the path name
     local size_label
     case "$data_path" in
-        *2gb*) size_label="2GB" ;;
-        *4gb*) size_label="4GB" ;;
-        *5gb*) size_label="5GB" ;;
-        *6gb*) size_label="6GB" ;;
-        *)     size_label="unknown" ;;
+        $FRAC_2GB) size_label="2GB" ;;
+        $FRAC_4GB) size_label="4GB" ;;
+        $FRAC_5GB) size_label="5GB" ;;
+        $FRAC_6GB) size_label="6GB" ;;
+        *)         size_label="unknown" ;;
     esac
 
     echo "${experiment},${test_label},${run_num},${num_workers},${size_label},${cores},${memory},${runtime}" >> "$CSV_FILE"
@@ -162,28 +166,28 @@ mkdir -p "${RESULTS_DIR}/spark_logs"
 # 1) Horizontal strong. fixed 5GB, add workers
 log ""
 log "=== Horizontal strong scaling ==="
-run_config "horizontal_strong" "A" 1 "$DATA_5GB" 2 "2g"
-run_config "horizontal_strong" "B" 2 "$DATA_5GB" 2 "2g"
-run_config "horizontal_strong" "C" 3 "$DATA_5GB" 2 "2g"
+run_config "horizontal_strong" "A" 1 "$FRAC_5GB" 2 "2g"
+run_config "horizontal_strong" "B" 2 "$FRAC_5GB" 2 "2g"
+run_config "horizontal_strong" "C" 3 "$FRAC_5GB" 2 "2g"
 
 # 2) Horizontal weak. 2GB/worker, scale data with workers
 log ""
 log "=== Horizontal weak scaling ==="
-run_config "horizontal_weak" "A" 1 "$DATA_2GB" 2 "2g"
-run_config "horizontal_weak" "B" 2 "$DATA_4GB" 2 "2g"
-run_config "horizontal_weak" "C" 3 "$DATA_6GB" 2 "2g"
+run_config "horizontal_weak" "A" 1 "$FRAC_2GB" 2 "2g"
+run_config "horizontal_weak" "B" 2 "$FRAC_4GB" 2 "2g"
+run_config "horizontal_weak" "C" 3 "$FRAC_6GB" 2 "2g"
 
 # 3) Vertical strong. fixed 5GB + 3 workers, increase cores
 log ""
 log "=== Vertical strong scaling ==="
-run_config "vertical_strong" "A" 3 "$DATA_5GB" 1 "2g"
-run_config "vertical_strong" "B" 3 "$DATA_5GB" 2 "2g"
+run_config "vertical_strong" "A" 3 "$FRAC_5GB" 1 "2g"
+run_config "vertical_strong" "B" 3 "$FRAC_5GB" 2 "2g"
 
 # 4) Vertical weak. 1 worker, scale cores and data together
 log ""
 log "=== Vertical weak scaling ==="
-run_config "vertical_weak" "A" 1 "$DATA_2GB" 1 "2g"
-run_config "vertical_weak" "B" 1 "$DATA_4GB" 2 "2g"
+run_config "vertical_weak" "A" 1 "$FRAC_2GB" 1 "2g"
+run_config "vertical_weak" "B" 1 "$FRAC_4GB" 2 "2g"
 
 # -- Done --
 
