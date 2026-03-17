@@ -20,7 +20,7 @@ YEAR_COL = "year"
 #   WORDS TO ANALYZE
 # =========================
 
-WORDS = ["cringe", "lmao", "bruh", "noob", "planking", "shoutout", "lol", "owling"]
+WORDS = ["cringe", "lmao", "bruh", "noob", "planking", "shoutout", "lol", "owling", "retard"]
 
 # =========================
 #   SPARK SESSION
