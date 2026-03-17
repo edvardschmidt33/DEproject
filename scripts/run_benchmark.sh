@@ -30,11 +30,11 @@ NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 # Full data path — we use --fraction to control how much data gets processed
 DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
 
-# Fractions of the full dataset at around 18.9 GB
-FRAC_2GB=0.2
-FRAC_4GB=0.4
-FRAC_5GB=0.5
-FRAC_6GB=0.6
+# Fractions of the full dataset at around 18.3 GB
+FRAC_6GB=0.333 #X
+FRAC_12GB=0.667 #2X
+FRAC_9GB=0.5 
+FRAC_18GB=0.98 #3X
 
 OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
 NUM_RUNS=3  # number of times to repeat each config
@@ -126,10 +126,10 @@ run_spark_job() {
     # figure out size label from the path name
     local size_label
     case "$data_path" in
-        $FRAC_2GB) size_label="2GB" ;;
-        $FRAC_4GB) size_label="4GB" ;;
-        $FRAC_5GB) size_label="5GB" ;;
         $FRAC_6GB) size_label="6GB" ;;
+        $FRAC_12GB) size_label="12GB" ;;
+        $FRAC_9GB) size_label="9GB" ;;
+        $FRAC_18GB) size_label="18GB" ;;
         *)         size_label="unknown" ;;
     esac
 
@@ -163,31 +163,31 @@ log "Runs per config: ${NUM_RUNS}"
 
 mkdir -p "${RESULTS_DIR}/spark_logs"
 
-# 1) Horizontal strong. fixed 5GB, add workers
+# 1) Horizontal strong. fixed 9GB, add workers
 log ""
 log "=== Horizontal strong scaling ==="
-run_config "horizontal_strong" "A" 1 "$FRAC_5GB" 2 "2g"
-run_config "horizontal_strong" "B" 2 "$FRAC_5GB" 2 "2g"
-run_config "horizontal_strong" "C" 3 "$FRAC_5GB" 2 "2g"
+run_config "horizontal_strong" "A" 1 "$FRAC_9GB" 2 "2g"
+run_config "horizontal_strong" "B" 2 "$FRAC_9GB" 2 "2g"
+run_config "horizontal_strong" "C" 3 "$FRAC_9GB" 2 "2g"
 
-# 2) Horizontal weak. 2GB/worker, scale data with workers
+# 2) Horizontal weak. 6GB/worker, scale data with workers
 log ""
 log "=== Horizontal weak scaling ==="
-run_config "horizontal_weak" "A" 1 "$FRAC_2GB" 2 "2g"
-run_config "horizontal_weak" "B" 2 "$FRAC_4GB" 2 "2g"
-run_config "horizontal_weak" "C" 3 "$FRAC_6GB" 2 "2g"
+run_config "horizontal_weak" "A" 1 "$FRAC_6GB" 2 "2g"
+run_config "horizontal_weak" "B" 2 "$FRAC_12GB" 2 "2g"
+run_config "horizontal_weak" "C" 3 "$FRAC_18GB" 2 "2g"
 
-# 3) Vertical strong. fixed 5GB + 3 workers, increase cores
+# 3) Vertical strong. fixed 9GB + 3 workers, increase cores
 log ""
 log "=== Vertical strong scaling ==="
-run_config "vertical_strong" "A" 3 "$FRAC_5GB" 1 "2g"
-run_config "vertical_strong" "B" 3 "$FRAC_5GB" 2 "2g"
+run_config "vertical_strong" "A" 3 "$FRAC_9GB" 1 "2g"
+run_config "vertical_strong" "B" 3 "$FRAC_9GB" 2 "2g"
 
 # 4) Vertical weak. 1 worker, scale cores and data together
 log ""
 log "=== Vertical weak scaling ==="
-run_config "vertical_weak" "A" 1 "$FRAC_2GB" 1 "2g"
-run_config "vertical_weak" "B" 1 "$FRAC_4GB" 2 "2g"
+run_config "vertical_weak" "A" 1 "$FRAC_6GB" 1 "2g"
+run_config "vertical_weak" "B" 1 "$FRAC_12GB" 2 "2g"
 
 # -- Done --
 
