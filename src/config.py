@@ -4,9 +4,13 @@ from pyspark.sql import SparkSession
 #   PATHS
 # =========================
 
-RAW_JSON_PATH = "/data/reddit/corpus-webis-tldr-17.json"
-PARQUET_PATH = "/data/reddit/parquet/reddit_cleaned"
-OUTPUT_PATH = "/data/reddit/output/wordcount_by_year"
+# RAW_JSON_PATH = "/data/reddit/corpus-webis-tldr-17.json"
+# PARQUET_PATH = "/data/reddit/parquet/reddit_cleaned"
+# OUTPUT_PATH = "/data/reddit/output/wordcount_by_year"
+
+RAW_JSON_PATH = "hdfs://localhost:9000/data/reddit/corpus-webis-tldr-17.json"
+PARQUET_PATH  = "hdfs://localhost:9000/data/reddit/parquet/reddit_cleaned"
+OUTPUT_PATH   = "hdfs://localhost:9000/data/reddit/output/wordcount_by_year"
 
 # =========================
 #   COLUMN NAMES
