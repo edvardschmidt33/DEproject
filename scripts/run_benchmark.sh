@@ -28,7 +28,8 @@ ALL_WORKERS=("group42-worker1" "group42-worker2" "group42-worker3")
 NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 
 # Full data path — we use --fraction to control how much data gets processed
-DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
+#DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
+DATA_PATH="hdfs://group42-master:9000/data/reddit/corpus-webis-tldr-17.json"
 
 # Fractions of the full dataset at around 18.3 GB
 FRAC_6GB=0.333 #X
