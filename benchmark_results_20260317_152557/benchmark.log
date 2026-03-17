@@ -1,0 +1,34 @@
+[2026-03-17 15:25:57] ==========================================
+[2026-03-17 15:25:57] Starting benchmark
+[2026-03-17 15:25:58] ==========================================
+[2026-03-17 15:25:58] Output: benchmark_results_20260317_152557
+[2026-03-17 15:25:58] Runs per config: 1
+[2026-03-17 15:25:58] 
+[2026-03-17 15:25:58] === Horizontal strong scaling ===
+[2026-03-17 15:25:58] Stopping all workers...
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-17 15:26:05] Starting 1 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-17 15:26:07]   -> group42-worker1 up
+[2026-03-17 15:26:17] --- horizontal_strong | Test A | Run 1/1 ---
+[2026-03-17 15:26:17]     workers=1 cores=2 mem=2g data=0.5
+[2026-03-17 15:36:53]     done in 633.445595462s
+[2026-03-17 15:36:53] 
+[2026-03-17 15:36:53] ==========================================
+[2026-03-17 15:36:53] Benchmark finished
+[2026-03-17 15:36:53] ==========================================
+[2026-03-17 15:36:53] CSV:    benchmark_results_20260317_152557/results.csv
+[2026-03-17 15:36:53] Log:    benchmark_results_20260317_152557/benchmark.log
+[2026-03-17 15:36:53] Spark:  benchmark_results_20260317_152557/spark_logs/
+[2026-03-17 15:36:53] 
+[2026-03-17 15:36:53] Results:
+experiment,test,run,workers,dataset_size,executor_cores,executor_memory,runtime_seconds
+horizontal_strong,A,1,1,9GB,2,2g,633.445595462
+[2026-03-17 15:36:53] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-17 15:37:10] 
+[2026-03-17 15:37:10] Pass benchmark_results_20260317_152557/results.csv to the reporter for plotting.

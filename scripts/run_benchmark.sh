@@ -18,7 +18,8 @@ ALL_WORKERS=("group42-worker1" "group42-worker2" "group42-worker3")
 NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 
 # Full data path — we use --fraction to control how much data gets processed
-DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
+#DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
+DATA_PATH="hdfs://group42-master:9000/data/reddit/corpus-webis-tldr-17.json"
 
 # Fractions of the full dataset at around 18.3 GB
 FRAC_6GB=0.333 #X
@@ -27,7 +28,7 @@ FRAC_9GB=0.5
 FRAC_18GB=0.98 #3X
 
 OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
-NUM_RUNS=3  # number of times to repeat each config
+NUM_RUNS=1  # number of times to repeat each config
 
 # -- Output setup --
 
