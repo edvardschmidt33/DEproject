@@ -28,9 +28,10 @@ ALL_WORKERS=("group42-worker1" "group42-worker2" "group42-worker3")
 NUM_TOTAL_WORKERS=${#ALL_WORKERS[@]}
 
 # Full data path — we use --fraction to control how much data gets processed
-DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json/reddit_cleaned"
+DATA_PATH="hdfs:///data/reddit/corpus-webis-tldr-17.json"
 
 # Fractions of the full dataset at around 18.9 GB
+FRAC_2GB=0.2
 FRAC_4GB=0.4
 FRAC_5GB=0.5
 FRAC_6GB=0.6
@@ -106,7 +107,7 @@ run_spark_job() {
         --conf spark.eventLog.enabled=true \
         --conf spark.eventLog.dir="${RESULTS_DIR}/spark_logs" \
         "$PYSPARK_JOB" \
-        --input "$PARQUET_PATH" \
+        --input "$DATA_PATH" \
         --output "$output_path" \
         --fraction "$data_path" \
         >> "$run_log" 2>&1
