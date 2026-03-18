@@ -155,11 +155,11 @@ log "Runs per config: ${NUM_RUNS}"
 mkdir -p "${RESULTS_DIR}/spark_logs"
 
 # 1) Horizontal strong. fixed 4.5GB, add workers
-log ""
-log "=== Horizontal strong scaling ==="
-run_config "horizontal_strong" "A" 1 "$FRAC_4_5GB" 2 "2g"
-run_config "horizontal_strong" "B" 2 "$FRAC_4_5GB" 2 "2g"
-run_config "horizontal_strong" "C" 3 "$FRAC_4_5GB" 2 "2g"
+# log ""
+# log "=== Horizontal strong scaling ==="
+# run_config "horizontal_strong" "A" 1 "$FRAC_4_5GB" 2 "2g"
+# run_config "horizontal_strong" "B" 2 "$FRAC_4_5GB" 2 "2g"
+# run_config "horizontal_strong" "C" 3 "$FRAC_4_5GB" 2 "2g"
 
 # 2) Horizontal weak. 3GB/worker, scale data with workers
 log ""
