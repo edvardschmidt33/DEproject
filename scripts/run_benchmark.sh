@@ -3,17 +3,7 @@
 # Runs all scaling experiments for the Reddit wordcount project.
 # Outputs a CSV with runtimes + per-run Spark logs.
 #
-# Before you run this:
-#   - Set SPARK_HOME and SPARK_MASTER below
-#   - Make sure analysis_job.py works on its own first
-#   - Upload data subsets to HDFS (see paths below)
-#   - chmod +x run_benchmark.sh
 
-# notes:
-#   1. Fill in the CONFIG section below with your cluster details
-#   2. Make sure your PySpark job (analysis_job.py) works manually first
-#   3. Ensure HDFS data subsets are prepared (see DATA SETUP section)
-#   4. Make this script executable: chmod +x run_benchmark.sh
 
 
 # -- Config --
@@ -37,7 +27,6 @@ FRAC_12GB=0.667 #2X
 FRAC_9GB=0.5 
 FRAC_18GB=0.98 #3X
 
-#OUTPUT_BASE="hdfs:///user/ubuntu/benchmark_output"
 OUTPUT_BASE="hdfs://group42-master:9000/user/ubuntu/benchmark_output"
 NUM_RUNS=1  # number of times to repeat each config
 
@@ -169,27 +158,27 @@ mkdir -p "${RESULTS_DIR}/spark_logs"
 log ""
 log "=== Horizontal strong scaling ==="
 run_config "horizontal_strong" "A" 1 "$FRAC_9GB" 2 "2g"
-# run_config "horizontal_strong" "B" 2 "$FRAC_9GB" 2 "2g"
-# run_config "horizontal_strong" "C" 3 "$FRAC_9GB" 2 "2g"
+run_config "horizontal_strong" "B" 2 "$FRAC_9GB" 2 "2g"
+run_config "horizontal_strong" "C" 3 "$FRAC_9GB" 2 "2g"
 
-# # 2) Horizontal weak. 6GB/worker, scale data with workers
-# log ""
-# log "=== Horizontal weak scaling ==="
-# run_config "horizontal_weak" "A" 1 "$FRAC_6GB" 2 "2g"
-# run_config "horizontal_weak" "B" 2 "$FRAC_12GB" 2 "2g"
-# run_config "horizontal_weak" "C" 3 "$FRAC_18GB" 2 "2g"
+# 2) Horizontal weak. 6GB/worker, scale data with workers
+log ""
+log "=== Horizontal weak scaling ==="
+run_config "horizontal_weak" "A" 1 "$FRAC_6GB" 2 "2g"
+run_config "horizontal_weak" "B" 2 "$FRAC_12GB" 2 "2g"
+run_config "horizontal_weak" "C" 3 "$FRAC_18GB" 2 "2g"
 
-# # 3) Vertical strong. fixed 9GB + 3 workers, increase cores
-# log ""
-# log "=== Vertical strong scaling ==="
-# run_config "vertical_strong" "A" 3 "$FRAC_9GB" 1 "2g"
-# run_config "vertical_strong" "B" 3 "$FRAC_9GB" 2 "2g"
+# 3) Vertical strong. fixed 9GB + 3 workers, increase cores
+log ""
+log "=== Vertical strong scaling ==="
+run_config "vertical_strong" "A" 3 "$FRAC_9GB" 1 "2g"
+run_config "vertical_strong" "B" 3 "$FRAC_9GB" 2 "2g"
 
-# # 4) Vertical weak. 1 worker, scale cores and data together
-# log ""
-# log "=== Vertical weak scaling ==="
-# run_config "vertical_weak" "A" 1 "$FRAC_6GB" 1 "2g"
-# run_config "vertical_weak" "B" 1 "$FRAC_12GB" 2 "2g"
+# 4) Vertical weak. 1 worker, scale cores and data together
+log ""
+log "=== Vertical weak scaling ==="
+run_config "vertical_weak" "A" 1 "$FRAC_6GB" 1 "2g"
+run_config "vertical_weak" "B" 1 "$FRAC_12GB" 2 "2g"
 
 # -- Done --
 

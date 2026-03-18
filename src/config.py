@@ -25,7 +25,7 @@ SUBREDDIT_COL = "subreddit"
 #   WORDS TO ANALYZE
 # =========================
 
-WORDS = ["cringe", "lmao", "bruh", "noob", "planking", "shoutout", "lol", "owling", "retard"]
+WORDS = ["cringe", "noob", "lol", "swag", "yolo"]
 
 # =========================
 #   SPARK SESSION
