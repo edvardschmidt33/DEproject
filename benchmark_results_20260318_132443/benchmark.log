@@ -1,0 +1,37 @@
+[2026-03-18 13:24:43] ==========================================
+[2026-03-18 13:24:43] Starting benchmark
+[2026-03-18 13:24:43] ==========================================
+[2026-03-18 13:24:43] Output: benchmark_results_20260318_132443
+[2026-03-18 13:24:43] Runs per config: 1
+[2026-03-18 13:24:43] 
+[2026-03-18 13:24:43] === Horizontal strong scaling ===
+[2026-03-18 13:24:43] Stopping all workers...
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-18 13:25:47] Starting 1 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 13:25:55]   -> group42-worker1 up
+[2026-03-18 13:26:05] --- horizontal_strong | Test A | Run 1/1 ---
+[2026-03-18 13:26:05]     workers=1 cores=2 mem=2g data=0.5
+Deleted hdfs://group42-master:9000/user/ubuntu/benchmark_output/horizontal_strong_A_run1
+[2026-03-18 14:15:08]     done in 2940.662810212s
+[2026-03-18 14:15:08] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-18 14:17:11] Starting 2 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 14:17:24]   -> group42-worker1 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+[2026-03-18 14:17:35]   -> group42-worker2 up
+[2026-03-18 14:17:45] --- horizontal_strong | Test B | Run 1/1 ---
+[2026-03-18 14:17:45]     workers=2 cores=2 mem=2g data=0.5
+[2026-03-18 14:35:42]     FAILED (exit 130) — see benchmark_results_20260318_132443/horizontal_strong_B_run1.log
+[2026-03-18 14:35:42] Stopping all workers...
