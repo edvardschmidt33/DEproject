@@ -1,0 +1,184 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/03/17 15:51:51 INFO SparkContext: Running Spark version 4.1.1
+26/03/17 15:51:51 INFO SparkContext: OS info Linux, 5.15.0-91-generic, amd64
+26/03/17 15:51:51 INFO SparkContext: Java version 17.0.18+8-Ubuntu-122.04.1
+26/03/17 15:51:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/03/17 15:51:51 INFO ResourceUtils: ==============================================================
+26/03/17 15:51:51 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/03/17 15:51:51 INFO ResourceUtils: ==============================================================
+26/03/17 15:51:51 INFO SparkContext: Submitted application: reddit-analysis
+26/03/17 15:51:52 INFO SecurityManager: Changing view acls to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing modify acls to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing view acls groups to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing modify acls groups to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ubuntu groups with view permissions: EMPTY; users with modify permissions: ubuntu; groups with modify permissions: EMPTY; RPC SSL disabled
+26/03/17 15:51:52 INFO Utils: Successfully started service 'sparkDriver' on port 45557.
+26/03/17 15:51:52 INFO SparkEnv: Registering MapOutputTracker
+26/03/17 15:51:52 INFO SparkEnv: Registering BlockManagerMaster
+26/03/17 15:51:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/03/17 15:51:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/03/17 15:51:52 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/03/17 15:51:52 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-137500b4-ef0e-45d3-98c4-7af1c07dbf5b
+26/03/17 15:51:52 INFO SparkEnv: Registering OutputCommitCoordinator
+26/03/17 15:51:52 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/03/17 15:51:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/03/17 15:51:52 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/03/17 15:51:52 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+26/03/17 15:51:52 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/03/17 15:51:52 INFO SecurityManager: Changing view acls to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing modify acls to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing view acls groups to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: Changing modify acls groups to: ubuntu
+26/03/17 15:51:52 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ubuntu groups with view permissions: EMPTY; users with modify permissions: ubuntu; groups with modify permissions: EMPTY; RPC SSL disabled
+26/03/17 15:51:52 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://group42-master:7077...
+26/03/17 15:51:52 INFO TransportClientFactory: Successfully created connection to group42-master/192.168.2.7:7077 after 32 ms (0 ms spent in bootstraps)
+26/03/17 15:51:53 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260317155153-0033
+26/03/17 15:51:53 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37799.
+26/03/17 15:51:53 INFO NettyBlockTransferService: Server created on group42-master:37799
+26/03/17 15:51:53 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260317155153-0033/0 on worker-20260317155138-192.168.2.103-43049 (192.168.2.103:43049) with 2 core(s)
+26/03/17 15:51:53 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/03/17 15:51:53 INFO StandaloneSchedulerBackend: Granted executor ID app-20260317155153-0033/0 on hostPort 192.168.2.103:43049 with 2 core(s), 2.0 GiB RAM
+26/03/17 15:51:53 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, group42-master, 37799, None)
+26/03/17 15:51:53 INFO BlockManagerMasterEndpoint: Registering block manager group42-master:37799 with 434.4 MiB RAM, BlockManagerId(driver, group42-master, 37799, None)
+26/03/17 15:51:53 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, group42-master, 37799, None)
+26/03/17 15:51:53 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, group42-master, 37799, None)
+26/03/17 15:51:53 INFO RollingEventLogFilesWriter: Logging events to file:/home/ubuntu/project_github_repo_clone/DEproject/benchmark_results_20260317_155115/spark_logs/eventlog_v2_app-20260317155153-0033/events_1_app-20260317155153-0033
+26/03/17 15:51:53 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20260317155153-0033/0 is now RUNNING
+26/03/17 15:51:53 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+26/03/17 15:51:55 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+26/03/17 15:51:55 INFO SharedState: Warehouse path is 'file:/home/ubuntu/project_github_repo_clone/DEproject/spark-warehouse'.
+26/03/17 15:51:56 INFO InMemoryFileIndex: It took 113 ms to list leaf files for 1 paths.
+26/03/17 15:51:56 INFO InMemoryFileIndex: It took 17 ms to list leaf files for 1 paths.
+26/03/17 15:51:57 INFO FileSourceStrategy: Pushed Filters: 
+26/03/17 15:51:57 INFO FileSourceStrategy: Post-Scan Filters: Set()
+26/03/17 15:51:57 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+26/03/17 15:51:57 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 215.4 KiB, free 434.2 MiB)
+26/03/17 15:51:57 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 39.0 KiB, free 434.2 MiB)
+26/03/17 15:51:57 INFO SparkContext: Created broadcast 0 from json at NativeMethodAccessorImpl.java:0
+26/03/17 15:51:57 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/03/17 15:51:57 INFO SparkContext: Starting job: json at NativeMethodAccessorImpl.java:0
+26/03/17 15:51:57 INFO DAGScheduler: Got job 0 (json at NativeMethodAccessorImpl.java:0) with 147 output partitions
+26/03/17 15:51:57 INFO DAGScheduler: Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+26/03/17 15:51:57 INFO DAGScheduler: Parents of final stage: List()
+26/03/17 15:51:57 INFO DAGScheduler: Missing parents: List()
+26/03/17 15:51:57 INFO DAGScheduler: Missing parents found for ResultStage 0: List()
+26/03/17 15:51:57 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+26/03/17 15:51:57 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 17.6 KiB, free 434.1 MiB)
+26/03/17 15:51:57 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.1 KiB, free 434.1 MiB)
+26/03/17 15:51:57 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1686
+26/03/17 15:51:57 INFO DAGScheduler: Submitting 147 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+26/03/17 15:51:57 INFO TaskSchedulerImpl: Adding task set 0.0 with 147 tasks resource profile 0
+26/03/17 15:51:58 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (192.168.2.103:46980) with ID 0, ResourceProfileId 0
+26/03/17 15:51:59 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.2.103:42775 with 1048.8 MiB RAM, BlockManagerId(0, 192.168.2.103, 42775, None)
+26/03/17 15:51:59 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (192.168.2.103,executor 0, partition 0, ANY, 10262 bytes) 
+26/03/17 15:51:59 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (192.168.2.103,executor 0, partition 1, ANY, 10262 bytes) 
+26/03/17 15:52:21 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (192.168.2.103,executor 0, partition 2, ANY, 10262 bytes) 
+26/03/17 15:52:21 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 21333 ms on 192.168.2.103 (executor 0) (1/147)
+26/03/17 15:52:21 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3) (192.168.2.103,executor 0, partition 3, ANY, 10262 bytes) 
+26/03/17 15:52:21 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 21385 ms on 192.168.2.103 (executor 0) (2/147)
+26/03/17 15:52:25 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4) (192.168.2.103,executor 0, partition 4, ANY, 10262 bytes) 
+26/03/17 15:52:25 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 3965 ms on 192.168.2.103 (executor 0) (3/147)
+26/03/17 15:52:25 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5) (192.168.2.103,executor 0, partition 5, ANY, 10262 bytes) 
+26/03/17 15:52:25 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 4726 ms on 192.168.2.103 (executor 0) (4/147)
+26/03/17 15:52:32 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6) (192.168.2.103,executor 0, partition 6, ANY, 10262 bytes) 
+26/03/17 15:52:32 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 7614 ms on 192.168.2.103 (executor 0) (5/147)
+26/03/17 15:52:33 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 7823 ms on 192.168.2.103 (executor 0) (6/147)
+26/03/17 15:52:33 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7) (192.168.2.103,executor 0, partition 7, ANY, 10262 bytes) 
+26/03/17 15:52:38 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8) (192.168.2.103,executor 0, partition 8, ANY, 10262 bytes) 
+26/03/17 15:52:38 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 5404 ms on 192.168.2.103 (executor 0) (7/147)
+26/03/17 15:52:38 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9) (192.168.2.103,executor 0, partition 9, ANY, 10262 bytes) 
+26/03/17 15:52:38 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 4968 ms on 192.168.2.103 (executor 0) (8/147)
+26/03/17 15:52:42 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10) (192.168.2.103,executor 0, partition 10, ANY, 10262 bytes) 
+26/03/17 15:52:42 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 4365 ms on 192.168.2.103 (executor 0) (9/147)
+26/03/17 15:52:43 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11) (192.168.2.103,executor 0, partition 11, ANY, 10262 bytes) 
+26/03/17 15:52:43 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 4702 ms on 192.168.2.103 (executor 0) (10/147)
+26/03/17 15:52:48 INFO TaskSetManager: Starting task 12.0 in stage 0.0 (TID 12) (192.168.2.103,executor 0, partition 12, ANY, 10262 bytes) 
+26/03/17 15:52:48 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 5719 ms on 192.168.2.103 (executor 0) (11/147)
+26/03/17 15:52:48 INFO TaskSetManager: Starting task 13.0 in stage 0.0 (TID 13) (192.168.2.103,executor 0, partition 13, ANY, 10262 bytes) 
+26/03/17 15:52:48 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 5017 ms on 192.168.2.103 (executor 0) (12/147)
+26/03/17 15:52:54 INFO TaskSetManager: Starting task 14.0 in stage 0.0 (TID 14) (192.168.2.103,executor 0, partition 14, ANY, 10262 bytes) 
+26/03/17 15:52:54 INFO TaskSetManager: Finished task 12.0 in stage 0.0 (TID 12) in 6032 ms on 192.168.2.103 (executor 0) (13/147)
+26/03/17 15:52:54 INFO TaskSetManager: Starting task 15.0 in stage 0.0 (TID 15) (192.168.2.103,executor 0, partition 15, ANY, 10262 bytes) 
+26/03/17 15:52:54 INFO TaskSetManager: Finished task 13.0 in stage 0.0 (TID 13) in 6564 ms on 192.168.2.103 (executor 0) (14/147)
+26/03/17 15:52:59 INFO TaskSetManager: Finished task 14.0 in stage 0.0 (TID 14) in 4973 ms on 192.168.2.103 (executor 0) (15/147)
+26/03/17 15:52:59 INFO TaskSetManager: Starting task 16.0 in stage 0.0 (TID 16) (192.168.2.103,executor 0, partition 16, ANY, 10262 bytes) 
+26/03/17 15:52:59 INFO TaskSetManager: Starting task 17.0 in stage 0.0 (TID 17) (192.168.2.103,executor 0, partition 17, ANY, 10262 bytes) 
+26/03/17 15:52:59 INFO TaskSetManager: Finished task 15.0 in stage 0.0 (TID 15) in 4371 ms on 192.168.2.103 (executor 0) (16/147)
+26/03/17 15:53:03 INFO TaskSetManager: Starting task 18.0 in stage 0.0 (TID 18) (192.168.2.103,executor 0, partition 18, ANY, 10262 bytes) 
+26/03/17 15:53:03 INFO TaskSetManager: Finished task 16.0 in stage 0.0 (TID 16) in 4544 ms on 192.168.2.103 (executor 0) (17/147)
+26/03/17 15:53:04 INFO TaskSetManager: Finished task 17.0 in stage 0.0 (TID 17) in 4856 ms on 192.168.2.103 (executor 0) (18/147)
+26/03/17 15:53:04 INFO TaskSetManager: Starting task 19.0 in stage 0.0 (TID 19) (192.168.2.103,executor 0, partition 19, ANY, 10262 bytes) 
+26/03/17 15:53:08 INFO TaskSetManager: Starting task 20.0 in stage 0.0 (TID 20) (192.168.2.103,executor 0, partition 20, ANY, 10262 bytes) 
+26/03/17 15:53:08 INFO TaskSetManager: Finished task 19.0 in stage 0.0 (TID 19) in 4499 ms on 192.168.2.103 (executor 0) (19/147)
+26/03/17 15:53:08 INFO TaskSetManager: Starting task 21.0 in stage 0.0 (TID 21) (192.168.2.103,executor 0, partition 21, ANY, 10262 bytes) 
+26/03/17 15:53:08 INFO TaskSetManager: Finished task 18.0 in stage 0.0 (TID 18) in 5141 ms on 192.168.2.103 (executor 0) (20/147)
+26/03/17 15:53:12 INFO TaskSetManager: Starting task 22.0 in stage 0.0 (TID 22) (192.168.2.103,executor 0, partition 22, ANY, 10262 bytes) 
+26/03/17 15:53:12 INFO TaskSetManager: Finished task 20.0 in stage 0.0 (TID 20) in 4110 ms on 192.168.2.103 (executor 0) (21/147)
+26/03/17 15:53:13 INFO TaskSetManager: Starting task 23.0 in stage 0.0 (TID 23) (192.168.2.103,executor 0, partition 23, ANY, 10262 bytes) 
+26/03/17 15:53:13 INFO TaskSetManager: Finished task 21.0 in stage 0.0 (TID 21) in 4970 ms on 192.168.2.103 (executor 0) (22/147)
+26/03/17 15:53:16 INFO TaskSetManager: Starting task 24.0 in stage 0.0 (TID 24) (192.168.2.103,executor 0, partition 24, ANY, 10262 bytes) 
+26/03/17 15:53:16 INFO TaskSetManager: Finished task 22.0 in stage 0.0 (TID 22) in 4067 ms on 192.168.2.103 (executor 0) (23/147)
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+26/03/17 15:53:18 INFO SparkContext: Invoking stop() from shutdown hook
+26/03/17 15:53:18 INFO SparkContext: SparkContext is stopping with exitCode 0 from run at Executors.java:539.
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 408, in signal_handler
+    self.cancelAllJobs()
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 2506, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 263, in deco
+    return f(*a, **kw)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o22.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+26/03/17 15:53:18 INFO SparkUI: Stopped Spark web UI at http://group42-master:4040
+26/03/17 15:53:18 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) failed in 80347 ms due to Stage cancelled because SparkContext was shut down
+26/03/17 15:53:18 INFO DAGScheduler: Job 0 failed: json at NativeMethodAccessorImpl.java:0, took 80419.10049 ms
+26/03/17 15:53:18 INFO StandaloneSchedulerBackend: Shutting down all executors
+26/03/17 15:53:18 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+Traceback (most recent call last):
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 48, in <module>
+    main()
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 16, in main
+    df = spark.read.json(args.input)
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 468, in json
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 263, in deco
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 335, in get_return_value
+py4j.protocol.Py4JError: An error occurred while calling o35.json
+26/03/17 15:53:18 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/03/17 15:53:18 INFO MemoryStore: MemoryStore cleared
+26/03/17 15:53:18 INFO BlockManager: BlockManager stopped
+26/03/17 15:53:18 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/03/17 15:53:18 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/03/17 15:53:18 INFO SparkContext: Successfully stopped SparkContext (Uptime: 86383 ms)

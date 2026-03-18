@@ -1,0 +1,2 @@
+experiment,test,run,workers,dataset_size,executor_cores,executor_memory,runtime_seconds
+horizontal_strong,A,1,1,9GB,2,2g,FAILED
