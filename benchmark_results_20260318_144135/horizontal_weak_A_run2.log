@@ -1,0 +1,16 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Traceback (most recent call last):
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 1, in <module>
+    from pyspark.sql import functions as F
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/__init__.py", line 53, in <module>
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/util.py", line 36, in <module>
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/serializers.py", line 69, in <module>
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/cloudpickle/__init__.py", line 1, in <module>
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen zipimport>", line 196, in get_code
+  File "<frozen zipimport>", line 767, in _get_module_code
+  File "<frozen zipimport>", line 696, in _compile_source
+KeyboardInterrupt

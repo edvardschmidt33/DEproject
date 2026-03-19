@@ -1,0 +1,73 @@
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/03/18 18:03:14 INFO SparkContext: Running Spark version 4.1.1
+26/03/18 18:03:14 INFO SparkContext: OS info Linux, 5.15.0-91-generic, amd64
+26/03/18 18:03:14 INFO SparkContext: Java version 17.0.18+8-Ubuntu-122.04.1
+26/03/18 18:03:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/03/18 18:03:14 INFO ResourceUtils: ==============================================================
+26/03/18 18:03:14 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/03/18 18:03:14 INFO ResourceUtils: ==============================================================
+26/03/18 18:03:14 INFO SparkContext: Submitted application: reddit-analysis
+26/03/18 18:03:14 INFO SecurityManager: Changing view acls to: ubuntu
+26/03/18 18:03:14 INFO SecurityManager: Changing modify acls to: ubuntu
+26/03/18 18:03:14 INFO SecurityManager: Changing view acls groups to: ubuntu
+26/03/18 18:03:14 INFO SecurityManager: Changing modify acls groups to: ubuntu
+26/03/18 18:03:14 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ubuntu groups with view permissions: EMPTY; users with modify permissions: ubuntu; groups with modify permissions: EMPTY; RPC SSL disabled
+26/03/18 18:03:14 INFO Utils: Successfully started service 'sparkDriver' on port 33175.
+26/03/18 18:03:14 INFO SparkEnv: Registering MapOutputTracker
+26/03/18 18:03:14 INFO SparkEnv: Registering BlockManagerMaster
+26/03/18 18:03:14 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/03/18 18:03:14 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/03/18 18:03:14 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/03/18 18:03:14 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-0a4a5a59-f0f5-4989-b112-910e49452f2c
+26/03/18 18:03:15 INFO SparkEnv: Registering OutputCommitCoordinator
+26/03/18 18:03:15 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/03/18 18:03:15 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/03/18 18:03:15 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 2, script: , vendor: , memory -> name: memory, amount: 2048, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/03/18 18:03:15 INFO ResourceProfile: Limiting resource is cpus at 2 tasks per executor
+26/03/18 18:03:15 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/03/18 18:03:15 INFO SecurityManager: Changing view acls to: ubuntu
+26/03/18 18:03:15 INFO SecurityManager: Changing modify acls to: ubuntu
+26/03/18 18:03:15 INFO SecurityManager: Changing view acls groups to: ubuntu
+26/03/18 18:03:15 INFO SecurityManager: Changing modify acls groups to: ubuntu
+26/03/18 18:03:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ubuntu groups with view permissions: EMPTY; users with modify permissions: ubuntu; groups with modify permissions: EMPTY; RPC SSL disabled
+26/03/18 18:03:15 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://group42-master:7077...
+26/03/18 18:03:15 INFO TransportClientFactory: Successfully created connection to group42-master/192.168.2.7:7077 after 27 ms (0 ms spent in bootstraps)
+26/03/18 18:03:15 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20260318180315-0047
+26/03/18 18:03:15 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20260318180315-0047/0 on worker-20260318173940-192.168.2.103-36123 (192.168.2.103:36123) with 2 core(s)
+26/03/18 18:03:15 INFO StandaloneSchedulerBackend: Granted executor ID app-20260318180315-0047/0 on hostPort 192.168.2.103:36123 with 2 core(s), 2.0 GiB RAM
+26/03/18 18:03:15 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34509.
+26/03/18 18:03:15 INFO NettyBlockTransferService: Server created on group42-master:34509
+26/03/18 18:03:15 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/03/18 18:03:15 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, group42-master, 34509, None)
+26/03/18 18:03:15 INFO BlockManagerMasterEndpoint: Registering block manager group42-master:34509 with 434.4 MiB RAM, BlockManagerId(driver, group42-master, 34509, None)
+26/03/18 18:03:15 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, group42-master, 34509, None)
+ERROR:root:KeyboardInterrupt while sending command.
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 48, in <module>
+    main()
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 14, in main
+    spark = create_spark("reddit-analysis")
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/config.py", line 39, in create_spark
+    .getOrCreate()
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/sql/session.py", line 557, in getOrCreate
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 542, in getOrCreate
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 208, in __init__
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 301, in _do_init
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 448, in _initialize_context
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1626, in __call__
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+KeyboardInterrupt
+26/03/18 18:03:15 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, group42-master, 34509, None)
+26/03/18 18:03:15 INFO DiskBlockManager: Shutdown hook called

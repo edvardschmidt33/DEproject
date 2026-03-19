@@ -1,0 +1,186 @@
+[2026-03-18 19:28:03] ==========================================
+[2026-03-18 19:28:03] Starting benchmark
+[2026-03-18 19:28:03] ==========================================
+[2026-03-18 19:28:03] Output: benchmark_results_20260318_192803
+[2026-03-18 19:28:03] Runs per config: 3
+[2026-03-18 19:28:03] 
+[2026-03-18 19:28:03] === Horizontal weak scaling ===
+[2026-03-18 19:28:03] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-18 19:29:05] Starting 1 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 19:29:12]   -> group42-worker1 up
+[2026-03-18 19:29:22] --- horizontal_weak | Test A | Run 1/3 ---
+[2026-03-18 19:29:22]     workers=1 cores=2 mem=2g data=0.167
+[2026-03-18 20:03:56]     done in 2072.099413799s
+[2026-03-18 20:03:56] --- horizontal_weak | Test A | Run 2/3 ---
+[2026-03-18 20:03:56]     workers=1 cores=2 mem=2g data=0.167
+[2026-03-18 20:34:36]     done in 1837.838867069s
+[2026-03-18 20:34:36] --- horizontal_weak | Test A | Run 3/3 ---
+[2026-03-18 20:34:36]     workers=1 cores=2 mem=2g data=0.167
+[2026-03-18 21:00:27]     done in 1549.245472652s
+[2026-03-18 21:00:27] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-18 21:01:11] Starting 2 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 21:01:19]   -> group42-worker1 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+[2026-03-18 21:01:27]   -> group42-worker2 up
+[2026-03-18 21:01:37] --- horizontal_weak | Test B | Run 1/3 ---
+[2026-03-18 21:01:37]     workers=2 cores=2 mem=2g data=0.333
+[2026-03-18 21:11:54]     done in 615.353456033s
+[2026-03-18 21:11:54] --- horizontal_weak | Test B | Run 2/3 ---
+[2026-03-18 21:11:54]     workers=2 cores=2 mem=2g data=0.333
+[2026-03-18 21:21:27]     done in 570.794277774s
+[2026-03-18 21:21:27] --- horizontal_weak | Test B | Run 3/3 ---
+[2026-03-18 21:21:27]     workers=2 cores=2 mem=2g data=0.333
+[2026-03-18 21:34:37]     done in 788.651207606s
+[2026-03-18 21:34:37] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-18 21:35:31] Starting 3 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 21:35:41]   -> group42-worker1 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+[2026-03-18 21:35:49]   -> group42-worker2 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker3.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker3.out
+[2026-03-18 21:35:57]   -> group42-worker3 up
+[2026-03-18 21:36:07] --- horizontal_weak | Test C | Run 1/3 ---
+[2026-03-18 21:36:07]     workers=3 cores=2 mem=2g data=0.5
+[2026-03-18 21:44:15]     done in 485.973381786s
+[2026-03-18 21:44:15] --- horizontal_weak | Test C | Run 2/3 ---
+[2026-03-18 21:44:15]     workers=3 cores=2 mem=2g data=0.5
+[2026-03-18 21:53:02]     done in 525.862909145s
+[2026-03-18 21:53:02] --- horizontal_weak | Test C | Run 3/3 ---
+[2026-03-18 21:53:02]     workers=3 cores=2 mem=2g data=0.5
+[2026-03-18 22:00:41]     done in 456.911345800s
+[2026-03-18 22:00:41] 
+[2026-03-18 22:00:41] === Vertical strong scaling ===
+[2026-03-18 22:00:41] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+[2026-03-18 22:01:35] Starting 3 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 22:01:56]   -> group42-worker1 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+[2026-03-18 22:02:02]   -> group42-worker2 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker3.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker3.out
+[2026-03-18 22:02:10]   -> group42-worker3 up
+[2026-03-18 22:02:20] --- vertical_strong | Test A | Run 1/3 ---
+[2026-03-18 22:02:20]     workers=3 cores=1 mem=2g data=0.25
+[2026-03-18 22:14:35]     done in 733.272518787s
+[2026-03-18 22:14:35] --- vertical_strong | Test A | Run 2/3 ---
+[2026-03-18 22:14:35]     workers=3 cores=1 mem=2g data=0.25
+[2026-03-18 22:28:36]     done in 838.820761001s
+[2026-03-18 22:28:36] --- vertical_strong | Test A | Run 3/3 ---
+[2026-03-18 22:28:36]     workers=3 cores=1 mem=2g data=0.25
+[2026-03-18 22:40:42]     done in 724.408205425s
+[2026-03-18 22:40:42] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+[2026-03-18 22:41:19] Starting 3 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 22:41:27]   -> group42-worker1 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker2.out
+[2026-03-18 22:41:31]   -> group42-worker2 up
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker3.out
+[2026-03-18 22:41:36]   -> group42-worker3 up
+[2026-03-18 22:41:46] --- vertical_strong | Test B | Run 1/3 ---
+[2026-03-18 22:41:46]     workers=3 cores=2 mem=2g data=0.25
+[2026-03-18 22:45:19]     done in 211.844251294s
+[2026-03-18 22:45:19] --- vertical_strong | Test B | Run 2/3 ---
+[2026-03-18 22:45:19]     workers=3 cores=2 mem=2g data=0.25
+[2026-03-18 22:50:54]     done in 333.338274253s
+[2026-03-18 22:50:54] --- vertical_strong | Test B | Run 3/3 ---
+[2026-03-18 22:50:54]     workers=3 cores=2 mem=2g data=0.25
+[2026-03-18 22:55:17]     done in 261.132492034s
+[2026-03-18 22:55:17] 
+[2026-03-18 22:55:17] === Vertical weak scaling ===
+[2026-03-18 22:55:17] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+stopping org.apache.spark.deploy.worker.Worker
+[2026-03-18 22:55:32] Starting 1 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-18 22:55:40]   -> group42-worker1 up
+[2026-03-18 22:55:50] --- vertical_weak | Test A | Run 1/3 ---
+[2026-03-18 22:55:50]     workers=1 cores=1 mem=2g data=0.167
+[2026-03-18 23:11:03]     done in 911.921312842s
+[2026-03-18 23:11:03] --- vertical_weak | Test A | Run 2/3 ---
+[2026-03-18 23:11:03]     workers=1 cores=1 mem=2g data=0.167
+[2026-03-19 00:03:12]     done in 3127.146714656s
+[2026-03-19 00:03:12] --- vertical_weak | Test A | Run 3/3 ---
+[2026-03-19 00:03:12]     workers=1 cores=1 mem=2g data=0.167
+[2026-03-19 00:58:30]     done in 3315.677567880s
+[2026-03-19 00:58:30] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-19 00:59:10] Starting 1 worker(s)...
+starting org.apache.spark.deploy.worker.Worker, logging to /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+failed to launch: nice -n 0 /home/ubuntu/spark/bin/spark-class org.apache.spark.deploy.worker.Worker --webui-port 8081 spark://group42-master:7077
+full log in /home/ubuntu/spark/logs/spark-ubuntu-org.apache.spark.deploy.worker.Worker-1-group42-worker1.out
+[2026-03-19 00:59:19]   -> group42-worker1 up
+[2026-03-19 00:59:29] --- vertical_weak | Test B | Run 1/3 ---
+[2026-03-19 00:59:29]     workers=1 cores=2 mem=2g data=0.333
+[2026-03-19 01:14:36]     done in 905.056282450s
+[2026-03-19 01:14:36] --- vertical_weak | Test B | Run 2/3 ---
+[2026-03-19 01:14:36]     workers=1 cores=2 mem=2g data=0.333
+[2026-03-19 01:28:29]     done in 831.887262863s
+[2026-03-19 01:28:29] --- vertical_weak | Test B | Run 3/3 ---
+[2026-03-19 01:28:29]     workers=1 cores=2 mem=2g data=0.333
+[2026-03-19 01:48:19]     done in 1187.362018272s
+[2026-03-19 01:48:19] 
+[2026-03-19 01:48:19] ==========================================
+[2026-03-19 01:48:19] Benchmark finished
+[2026-03-19 01:48:19] ==========================================
+[2026-03-19 01:48:19] CSV:    benchmark_results_20260318_192803/results.csv
+[2026-03-19 01:48:19] Log:    benchmark_results_20260318_192803/benchmark.log
+[2026-03-19 01:48:19] Spark:  benchmark_results_20260318_192803/spark_logs/
+[2026-03-19 01:48:19] 
+[2026-03-19 01:48:19] Results:
+experiment,test,run,workers,dataset_size,executor_cores,executor_memory,runtime_seconds
+horizontal_weak,A,1,1,3GB,2,2g,2072.099413799
+horizontal_weak,A,2,1,3GB,2,2g,1837.838867069
+horizontal_weak,A,3,1,3GB,2,2g,1549.245472652
+horizontal_weak,B,1,2,6GB,2,2g,615.353456033
+horizontal_weak,B,2,2,6GB,2,2g,570.794277774
+horizontal_weak,B,3,2,6GB,2,2g,788.651207606
+horizontal_weak,C,1,3,9GB,2,2g,485.973381786
+horizontal_weak,C,2,3,9GB,2,2g,525.862909145
+horizontal_weak,C,3,3,9GB,2,2g,456.911345800
+vertical_strong,A,1,3,4.5GB,1,2g,733.272518787
+vertical_strong,A,2,3,4.5GB,1,2g,838.820761001
+vertical_strong,A,3,3,4.5GB,1,2g,724.408205425
+vertical_strong,B,1,3,4.5GB,2,2g,211.844251294
+vertical_strong,B,2,3,4.5GB,2,2g,333.338274253
+vertical_strong,B,3,3,4.5GB,2,2g,261.132492034
+vertical_weak,A,1,1,3GB,1,2g,911.921312842
+vertical_weak,A,2,1,3GB,1,2g,3127.146714656
+vertical_weak,A,3,1,3GB,1,2g,3315.677567880
+vertical_weak,B,1,1,6GB,2,2g,905.056282450
+vertical_weak,B,2,1,6GB,2,2g,831.887262863
+vertical_weak,B,3,1,6GB,2,2g,1187.362018272
+[2026-03-19 01:48:19] Stopping all workers...
+stopping org.apache.spark.deploy.worker.Worker
+no org.apache.spark.deploy.worker.Worker to stop
+no org.apache.spark.deploy.worker.Worker to stop
+[2026-03-19 01:49:07] 
+[2026-03-19 01:49:07] Pass benchmark_results_20260318_192803/results.csv to the reporter for plotting.

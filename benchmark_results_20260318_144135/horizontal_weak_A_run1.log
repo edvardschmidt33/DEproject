@@ -308,3 +308,161 @@ Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
 26/03/18 17:58:55 INFO TaskSetManager: Finished task 113.0 in stage 0.0 (TID 113) in 14152 ms on 192.168.2.103 (executor 0) (115/147)
 26/03/18 17:59:03 INFO TaskSetManager: Starting task 117.0 in stage 0.0 (TID 117) (192.168.2.103,executor 0, partition 117, ANY, 10262 bytes) 
 26/03/18 17:59:03 INFO TaskSetManager: Finished task 115.0 in stage 0.0 (TID 115) in 8864 ms on 192.168.2.103 (executor 0) (116/147)
+26/03/18 17:59:07 INFO TaskSetManager: Starting task 118.0 in stage 0.0 (TID 118) (192.168.2.103,executor 0, partition 118, ANY, 10262 bytes) 
+26/03/18 17:59:07 INFO TaskSetManager: Finished task 116.0 in stage 0.0 (TID 116) in 12582 ms on 192.168.2.103 (executor 0) (117/147)
+26/03/18 17:59:16 INFO TaskSetManager: Starting task 119.0 in stage 0.0 (TID 119) (192.168.2.103,executor 0, partition 119, ANY, 10262 bytes) 
+26/03/18 17:59:16 INFO TaskSetManager: Finished task 117.0 in stage 0.0 (TID 117) in 12792 ms on 192.168.2.103 (executor 0) (118/147)
+26/03/18 17:59:18 INFO TaskSetManager: Starting task 120.0 in stage 0.0 (TID 120) (192.168.2.103,executor 0, partition 120, ANY, 10262 bytes) 
+26/03/18 17:59:18 INFO TaskSetManager: Finished task 118.0 in stage 0.0 (TID 118) in 10710 ms on 192.168.2.103 (executor 0) (119/147)
+26/03/18 17:59:30 INFO TaskSetManager: Starting task 121.0 in stage 0.0 (TID 121) (192.168.2.103,executor 0, partition 121, ANY, 10262 bytes) 
+26/03/18 17:59:30 INFO TaskSetManager: Finished task 120.0 in stage 0.0 (TID 120) in 12176 ms on 192.168.2.103 (executor 0) (120/147)
+26/03/18 17:59:31 INFO TaskSetManager: Starting task 122.0 in stage 0.0 (TID 122) (192.168.2.103,executor 0, partition 122, ANY, 10262 bytes) 
+26/03/18 17:59:31 INFO TaskSetManager: Finished task 119.0 in stage 0.0 (TID 119) in 15652 ms on 192.168.2.103 (executor 0) (121/147)
+26/03/18 17:59:38 INFO TaskSetManager: Starting task 123.0 in stage 0.0 (TID 123) (192.168.2.103,executor 0, partition 123, ANY, 10262 bytes) 
+26/03/18 17:59:38 INFO TaskSetManager: Finished task 121.0 in stage 0.0 (TID 121) in 7960 ms on 192.168.2.103 (executor 0) (122/147)
+26/03/18 17:59:43 INFO TaskSetManager: Starting task 124.0 in stage 0.0 (TID 124) (192.168.2.103,executor 0, partition 124, ANY, 10262 bytes) 
+26/03/18 17:59:43 INFO TaskSetManager: Finished task 122.0 in stage 0.0 (TID 122) in 12083 ms on 192.168.2.103 (executor 0) (123/147)
+26/03/18 17:59:50 INFO TaskSetManager: Starting task 125.0 in stage 0.0 (TID 125) (192.168.2.103,executor 0, partition 125, ANY, 10262 bytes) 
+26/03/18 17:59:50 INFO TaskSetManager: Finished task 123.0 in stage 0.0 (TID 123) in 11346 ms on 192.168.2.103 (executor 0) (124/147)
+26/03/18 17:59:56 INFO TaskSetManager: Starting task 126.0 in stage 0.0 (TID 126) (192.168.2.103,executor 0, partition 126, ANY, 10262 bytes) 
+26/03/18 17:59:56 INFO TaskSetManager: Finished task 124.0 in stage 0.0 (TID 124) in 12842 ms on 192.168.2.103 (executor 0) (125/147)
+26/03/18 18:00:01 INFO TaskSetManager: Starting task 127.0 in stage 0.0 (TID 127) (192.168.2.103,executor 0, partition 127, ANY, 10262 bytes) 
+26/03/18 18:00:01 INFO TaskSetManager: Finished task 125.0 in stage 0.0 (TID 125) in 11625 ms on 192.168.2.103 (executor 0) (126/147)
+26/03/18 18:00:09 INFO TaskSetManager: Starting task 128.0 in stage 0.0 (TID 128) (192.168.2.103,executor 0, partition 128, ANY, 10262 bytes) 
+26/03/18 18:00:09 INFO TaskSetManager: Finished task 126.0 in stage 0.0 (TID 126) in 12934 ms on 192.168.2.103 (executor 0) (127/147)
+26/03/18 18:00:10 INFO TaskSetManager: Starting task 129.0 in stage 0.0 (TID 129) (192.168.2.103,executor 0, partition 129, ANY, 10262 bytes) 
+26/03/18 18:00:10 INFO TaskSetManager: Finished task 127.0 in stage 0.0 (TID 127) in 9242 ms on 192.168.2.103 (executor 0) (128/147)
+26/03/18 18:00:27 INFO TaskSetManager: Starting task 130.0 in stage 0.0 (TID 130) (192.168.2.103,executor 0, partition 130, ANY, 10262 bytes) 
+26/03/18 18:00:27 INFO TaskSetManager: Finished task 128.0 in stage 0.0 (TID 128) in 18149 ms on 192.168.2.103 (executor 0) (129/147)
+26/03/18 18:00:32 INFO TaskSetManager: Starting task 131.0 in stage 0.0 (TID 131) (192.168.2.103,executor 0, partition 131, ANY, 10262 bytes) 
+26/03/18 18:00:32 INFO TaskSetManager: Finished task 129.0 in stage 0.0 (TID 129) in 21060 ms on 192.168.2.103 (executor 0) (130/147)
+26/03/18 18:00:43 INFO TaskSetManager: Starting task 132.0 in stage 0.0 (TID 132) (192.168.2.103,executor 0, partition 132, ANY, 10262 bytes) 
+26/03/18 18:00:43 INFO TaskSetManager: Finished task 130.0 in stage 0.0 (TID 130) in 15277 ms on 192.168.2.103 (executor 0) (131/147)
+26/03/18 18:00:45 INFO TaskSetManager: Starting task 133.0 in stage 0.0 (TID 133) (192.168.2.103,executor 0, partition 133, ANY, 10262 bytes) 
+26/03/18 18:00:45 INFO TaskSetManager: Finished task 131.0 in stage 0.0 (TID 131) in 13266 ms on 192.168.2.103 (executor 0) (132/147)
+26/03/18 18:00:51 INFO TaskSetManager: Starting task 134.0 in stage 0.0 (TID 134) (192.168.2.103,executor 0, partition 134, ANY, 10262 bytes) 
+26/03/18 18:00:51 INFO TaskSetManager: Finished task 132.0 in stage 0.0 (TID 132) in 8581 ms on 192.168.2.103 (executor 0) (133/147)
+26/03/18 18:01:00 INFO TaskSetManager: Starting task 135.0 in stage 0.0 (TID 135) (192.168.2.103,executor 0, partition 135, ANY, 10262 bytes) 
+26/03/18 18:01:00 INFO TaskSetManager: Finished task 133.0 in stage 0.0 (TID 133) in 15678 ms on 192.168.2.103 (executor 0) (134/147)
+26/03/18 18:01:01 INFO TaskSetManager: Finished task 134.0 in stage 0.0 (TID 134) in 9381 ms on 192.168.2.103 (executor 0) (135/147)
+26/03/18 18:01:01 INFO TaskSetManager: Starting task 136.0 in stage 0.0 (TID 136) (192.168.2.103,executor 0, partition 136, ANY, 10262 bytes) 
+26/03/18 18:01:08 INFO TaskSetManager: Starting task 137.0 in stage 0.0 (TID 137) (192.168.2.103,executor 0, partition 137, ANY, 10262 bytes) 
+26/03/18 18:01:08 INFO TaskSetManager: Finished task 136.0 in stage 0.0 (TID 136) in 7338 ms on 192.168.2.103 (executor 0) (136/147)
+26/03/18 18:01:09 INFO TaskSetManager: Starting task 138.0 in stage 0.0 (TID 138) (192.168.2.103,executor 0, partition 138, ANY, 10262 bytes) 
+26/03/18 18:01:09 INFO TaskSetManager: Finished task 135.0 in stage 0.0 (TID 135) in 8094 ms on 192.168.2.103 (executor 0) (137/147)
+26/03/18 18:01:13 INFO TaskSetManager: Starting task 139.0 in stage 0.0 (TID 139) (192.168.2.103,executor 0, partition 139, ANY, 10262 bytes) 
+26/03/18 18:01:13 INFO TaskSetManager: Finished task 137.0 in stage 0.0 (TID 137) in 5362 ms on 192.168.2.103 (executor 0) (138/147)
+26/03/18 18:01:19 INFO TaskSetManager: Starting task 140.0 in stage 0.0 (TID 140) (192.168.2.103,executor 0, partition 140, ANY, 10262 bytes) 
+26/03/18 18:01:19 INFO TaskSetManager: Finished task 138.0 in stage 0.0 (TID 138) in 10174 ms on 192.168.2.103 (executor 0) (139/147)
+26/03/18 18:01:25 INFO TaskSetManager: Starting task 141.0 in stage 0.0 (TID 141) (192.168.2.103,executor 0, partition 141, ANY, 10262 bytes) 
+26/03/18 18:01:25 INFO TaskSetManager: Finished task 139.0 in stage 0.0 (TID 139) in 11440 ms on 192.168.2.103 (executor 0) (140/147)
+26/03/18 18:01:31 INFO TaskSetManager: Starting task 142.0 in stage 0.0 (TID 142) (192.168.2.103,executor 0, partition 142, ANY, 10262 bytes) 
+26/03/18 18:01:31 INFO TaskSetManager: Finished task 140.0 in stage 0.0 (TID 140) in 12363 ms on 192.168.2.103 (executor 0) (141/147)
+26/03/18 18:01:34 INFO TaskSetManager: Starting task 143.0 in stage 0.0 (TID 143) (192.168.2.103,executor 0, partition 143, ANY, 10262 bytes) 
+26/03/18 18:01:34 INFO TaskSetManager: Finished task 141.0 in stage 0.0 (TID 141) in 9670 ms on 192.168.2.103 (executor 0) (142/147)
+26/03/18 18:01:46 INFO TaskSetManager: Starting task 144.0 in stage 0.0 (TID 144) (192.168.2.103,executor 0, partition 144, ANY, 10262 bytes) 
+26/03/18 18:01:46 INFO TaskSetManager: Finished task 142.0 in stage 0.0 (TID 142) in 15271 ms on 192.168.2.103 (executor 0) (143/147)
+26/03/18 18:01:52 INFO TaskSetManager: Finished task 143.0 in stage 0.0 (TID 143) in 17658 ms on 192.168.2.103 (executor 0) (144/147)
+26/03/18 18:01:52 INFO TaskSetManager: Starting task 145.0 in stage 0.0 (TID 145) (192.168.2.103,executor 0, partition 145, ANY, 10262 bytes) 
+26/03/18 18:02:16 INFO TaskSetManager: Starting task 146.0 in stage 0.0 (TID 146) (192.168.2.103,executor 0, partition 146, ANY, 10262 bytes) 
+26/03/18 18:02:16 INFO TaskSetManager: Finished task 145.0 in stage 0.0 (TID 145) in 24227 ms on 192.168.2.103 (executor 0) (145/147)
+26/03/18 18:02:22 INFO TaskSetManager: Finished task 146.0 in stage 0.0 (TID 146) in 5526 ms on 192.168.2.103 (executor 0) (146/147)
+26/03/18 18:02:22 INFO TaskSetManager: Finished task 144.0 in stage 0.0 (TID 144) in 35413 ms on 192.168.2.103 (executor 0) (147/147)
+26/03/18 18:02:22 INFO DAGScheduler: ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 1390697 ms
+26/03/18 18:02:22 INFO TaskSchedulerImpl: Removed TaskSet 0.0 whose tasks have all completed, from pool 
+26/03/18 18:02:22 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+26/03/18 18:02:22 INFO TaskSchedulerImpl: Canceling stage 0
+26/03/18 18:02:22 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+26/03/18 18:02:22 INFO DAGScheduler: Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 1390766.349628 ms
+26/03/18 18:02:23 INFO FileSourceStrategy: Pushed Filters: 
+26/03/18 18:02:23 INFO FileSourceStrategy: Post-Scan Filters: Set()
+26/03/18 18:02:23 INFO CodeGenerator: Code generated in 315.003219 ms
+26/03/18 18:02:23 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 215.3 KiB, free 433.9 MiB)
+26/03/18 18:02:23 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 39.0 KiB, free 434.2 MiB)
+26/03/18 18:02:23 INFO SparkContext: Created broadcast 2 from $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768
+26/03/18 18:02:23 INFO FileSourceScanExec: Planning scan with bin packing, max size: 134217728 bytes, open cost is considered as scanning 4194304 bytes.
+26/03/18 18:02:24 INFO DAGScheduler: Registering RDD 7 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) as input to shuffle 0
+26/03/18 18:02:24 INFO DAGScheduler: Got map stage job 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) with 147 output partitions
+26/03/18 18:02:24 INFO DAGScheduler: Final stage: ShuffleMapStage 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768)
+26/03/18 18:02:24 INFO DAGScheduler: Parents of final stage: List()
+26/03/18 18:02:24 INFO DAGScheduler: Missing parents: List()
+26/03/18 18:02:24 INFO DAGScheduler: Missing parents found for ShuffleMapStage 1: List()
+26/03/18 18:02:24 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[7] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768), which has no missing parents
+26/03/18 18:02:24 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 44.5 KiB, free 434.1 MiB)
+26/03/18 18:02:24 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 19.3 KiB, free 434.1 MiB)
+26/03/18 18:02:24 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1686
+26/03/18 18:02:24 INFO DAGScheduler: Submitting 147 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[7] at $anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) (first 15 tasks are for partitions Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14))
+26/03/18 18:02:24 INFO TaskSchedulerImpl: Adding task set 1.0 with 147 tasks resource profile 0
+26/03/18 18:02:24 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 147) (192.168.2.103,executor 0, partition 0, ANY, 10251 bytes) 
+26/03/18 18:02:24 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 148) (192.168.2.103,executor 0, partition 1, ANY, 10251 bytes) 
+26/03/18 18:02:57 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 149) (192.168.2.103,executor 0, partition 2, ANY, 10251 bytes) 
+26/03/18 18:02:57 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 148) in 33631 ms on 192.168.2.103 (executor 0) (1/147)
+26/03/18 18:03:02 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 150) (192.168.2.103,executor 0, partition 3, ANY, 10251 bytes) 
+26/03/18 18:03:02 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 147) in 38902 ms on 192.168.2.103 (executor 0) (2/147)
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+RuntimeError: reentrant call inside <_io.BufferedReader name=3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 535, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.10/socket.py", line 705, in readinto
+    return self._sock.recv_into(b)
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 408, in signal_handler
+    self.cancelAllJobs()
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/core/context.py", line 2506, in cancelAllJobs
+    self._jsc.sc().cancelAllJobs()
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 263, in deco
+    return f(*a, **kw)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o22.sc
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/clientserver.py", line 566, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+26/03/18 18:03:07 INFO SparkContext: Invoking stop() from shutdown hook
+26/03/18 18:03:07 INFO SparkContext: SparkContext is stopping with exitCode 0 from run at Executors.java:539.
+26/03/18 18:03:07 INFO SparkUI: Stopped Spark web UI at http://group42-master:4040
+26/03/18 18:03:07 INFO DAGScheduler: ShuffleMapStage 1 ($anonfun$withThreadLocalCaptured$2 at CompletableFuture.java:1768) failed in 43030 ms due to Stage cancelled because SparkContext was shut down
+26/03/18 18:03:07 INFO StandaloneSchedulerBackend: Shutting down all executors
+26/03/18 18:03:07 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+26/03/18 18:03:07 INFO DAGScheduler: Asked to cancel job 1
+Traceback (most recent call last):
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 48, in <module>
+    main()
+  File "/home/ubuntu/project_github_repo_clone/DEproject/src/analysis_job.py", line 41, in main
+    result.write.mode("overwrite").option("header", True).csv(args.output)
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 2146, in csv
+    self._jwrite.csv(path)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/java_gateway.py", line 1362, in __call__
+    return_value = get_return_value(
+  File "/home/ubuntu/spark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 263, in deco
+    return f(*a, **kw)
+  File "/home/ubuntu/spark/python/lib/py4j-0.10.9.9-src.zip/py4j/protocol.py", line 335, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o85.csv
+26/03/18 18:03:07 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+26/03/18 18:03:07 INFO MemoryStore: MemoryStore cleared
+26/03/18 18:03:07 INFO BlockManager: BlockManager stopped
+26/03/18 18:03:07 INFO BlockManagerMaster: BlockManagerMaster stopped
+26/03/18 18:03:07 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+26/03/18 18:03:07 INFO SparkContext: Successfully stopped SparkContext (Uptime: 1442136 ms)
